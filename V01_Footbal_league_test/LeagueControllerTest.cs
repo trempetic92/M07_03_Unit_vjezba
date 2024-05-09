@@ -46,7 +46,7 @@ namespace V01_Footbal_league_test
                 }
             };
 
-            var mockLeagueRepository = new MockLeagueRepository().MockGetAll(new List<League>);
+            var mockLeagueRepository = new MockLeagueRepository().MockGetAll(new List<League>());
             var controller = new LeagueController(mockLeagueRepository.Object);
 
             var result = controller.Index();
