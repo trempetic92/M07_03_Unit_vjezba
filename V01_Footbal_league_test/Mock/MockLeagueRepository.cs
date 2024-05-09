@@ -16,5 +16,11 @@ namespace V01_Footbal_league_test.Mock
             Setup(x => x.GetAll()).Returns(results);
             return this;
         }
+
+        public MockLeagueRepository VerifyGetAll(Times times)
+        {
+            Verify(x => x.GetAll(), times);
+            return this;
+        }
     }
 }
