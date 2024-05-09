@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,10 @@ namespace V01_Footbal_league_test
 
             var mockLeagueRepository = new MockLeagueRepository().MockGetAll(mockLeagues);
             var controller = new LeagueController(mockLeagueRepository.Object);
+
+            var result = controller.Index();
+
+            Assert.IsAssignableFrom<ViewResult>(result);
         }
     }
 }
